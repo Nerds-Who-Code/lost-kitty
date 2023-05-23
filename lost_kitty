@@ -1,0 +1,94 @@
+########################################
+#  Lost Kitty                          #
+########################################
+
+# Lost Kitty is a text-based browser game that was created by the Nerds Who Code Discord community
+# Made using the Adventuron text adventure authoring system.
+
+
+# This is the starting location of the player upon starting the game
+start_at       = trail
+
+
+
+
+
+########################################
+#  Locations                           #
+########################################
+
+# These are the various locations that are on the Lost Kitty Map
+
+locations {
+   trail                    : location "You are standing on a frequently traveled dirt path. You look to your left and then your right and notice that the trail splits off in several different directions: North, South, East, and West.";
+   
+   cabin                    : location "You are in a warm, cozy cabin that is mostly lit up with natural light. The windows are open, filling the room with the smell of outside. You hear soft music playing in the background, and there are various plants that populate the living space.";
+}
+
+
+
+
+
+########################################
+#  Connections                         #
+########################################
+
+# This is how each location on the Lost Kitty map are connected to each other
+
+connections {
+
+   from, direction, to = [
+      hut,                  north,  road_1,
+      road_1,               north,  road_2,
+      road_2,               east,   road_3,
+   ]
+
+}
+
+
+
+
+
+########################################
+#  Objects                             #
+########################################
+
+# These are the various objects that are in Lost Kitty
+
+objects {
+
+   # These are items that the player can pick up (objects)
+
+   ladder           : object  "a ladder"                                    start_at="hut" ;
+   stone_key        : object  "a stone key" ;
+   axe              : object  "a wood cutters' axe" ;
+   lamp             : object  "a lamp" ;
+
+
+
+   # These are things or people that cannot be picked up by the player (scenery)
+
+   logs             : scenery "a pile of logs"                              start_at="deep_inside_birwood" ;
+   bush             : scenery "a bush"                                      start_at="birwood_bush" ;
+}
+
+
+
+
+
+########################################
+#  Information                         #
+########################################
+
+# Information about Lost Kitty
+
+game_information {
+   game_name             = Lost Kitty
+   game_shortname        = Lost Kitty
+   ported_by             = xxxxx
+   written_by            = Nerds Who Code (Nicole Carman / ? / ? / ? / ? / ? /
+   copyright_message     = (C) Adventuron Software Limited
+   year                  = 2023
+   game_version          = 1.0.0
+   short_synopsis        = A woman loses her cat and enlists your help in finding it! Do you help, or do you consider the alternatives?
+}
